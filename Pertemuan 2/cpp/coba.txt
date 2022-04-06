@@ -1,0 +1,10 @@
+Nama barang : Ayam Goreng
+Jumlah : 1
+Harga Satuan : 17000
+Total : 17000
+Nama barang : Udang Goreng
+Jumlah : 2
+Harga Satuan : 19000
+Total : 38000
+Total harga sebelum dipotong : 55000
+Total yang harus dibayarkan : 67000
