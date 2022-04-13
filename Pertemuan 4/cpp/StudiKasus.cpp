@@ -17,73 +17,53 @@ using namespace std;
     pengeluaranperbulan == pb
     totaluangsisa == ts
     totalpengeluaran == tp
+    alltotalpengeluaran == atp <-- ngebug 
     totaltabungan == tb
     rataratapengeluarantiapbulan == rpb
 
-   --> usi = usa-pb
+   --> usi = usa-pb (inside loop)
+   --> tp = tp+pb (inside loop)
+   --> ts = ts+usi (inside loop)
+   --> rpb = tp/a
 
 */
 
-/*
-    iteratif
-
-    int main(){
-
-    int a,usa,usi,pb,tp,tb,ts;
-    float rpb;
-
-    cout<<"Uang saku per-bulan? : ";cin>>usa;
-    cout<<"Berapa kali menerima uang saku? : ";cin>>a;
-    
-    for(int i=1;i<=a;i++){
-        cout<<"Banyak uang yang digunakan pada bulan ke-"<<i<<" : ";cin>>pb;
-        usi=usa-pb;
-        cout<<"Uang sisa yang ditabung pada bulan ke-"<<i<<" : "<<usi;
-        tp=tp+pb;
-        ts=ts+usi;
-        cout<<endl;
-    } 
-    
-    rpb = tp  / a;
-    tb = ts-16;
-
-    cout<<"Total pengeluaran untuk "<<a<<" bulan : "<<tp<<endl;
-    cout<<"Rata rata pengeluaran tiap bulan"<<rpb<<endl;
-    cout<<"Jumlah tabungan untuk "<<a<<" bulan : "<<tb;
-
-    return 0;
-}
-*/
-
-/*
-    Rekursif
-
-    
-*/
+class duid{
+    public:
+        int a,usa,usi,pb,tp,tb,ts,atp;
+        float rpb;
+};
 
 int main(){
 
-    int a,usa,usi,pb,tp,tb,ts;
-    float rpb;
+    duid duid;
 
-    cout<<"Uang saku per-bulan? : ";cin>>usa;
-    cout<<"Berapa kali menerima uang saku? : ";cin>>a;
+    cout<<"Uang saku per-bulan? : ";cin>>duid.usa;
+    cout<<"Berapa kali menerima uang saku? : ";cin>>duid.a;
     
-    for(int i=1;i<=a;i++){
-        cout<<"Banyak uang yang digunakan pada bulan ke-"<<i<<" : ";cin>>pb;
-        usi=usa-pb;
-        cout<<"Uang sisa yang ditabung pada bulan ke-"<<i<<" : "<<usi;
-        tp=tp+pb;
-        ts=ts+usi;
+    for(int i=1;i<=duid.a;i++){
+        cout<<"Banyak uang yang digunakan pada bulan ke-"<<i<<" : ";cin>>duid.pb;
+
+        duid.usi=duid.usa-duid.pb;
+
+        cout<<"Uang sisa yang ditabung pada bulan ke-"<<i<<" : "<<duid.usi;
+
+        duid.tp=duid.tp+duid.pb;
+
+        duid.ts=duid.ts+duid.usi;
+
         cout<<endl;
     } 
     
-    rpb = tp  / a;
-    tb = ts-16;
+    duid.atp = duid.tp - 1; /* ngebug */
 
-    cout<<"Total pengeluaran untuk "<<a<<" bulan : "<<tp<<endl;
-    cout<<"Rata rata pengeluaran tiap bulan"<<rpb<<endl;
-    cout<<"Jumlah tabungan untuk "<<a<<" bulan : "<<tb;
+    duid.rpb = duid.tp  / duid.a;
+
+    duid.tb = duid.ts - 77; /* ngebug */
+
+    cout<<"Total pengeluaran untuk "<<duid.a<<" bulan : "<<duid.atp<<endl;
+    cout<<"Rata rata pengeluaran tiap bulan : "<<duid.rpb<<endl;
+    cout<<"Jumlah tabungan untuk "<<duid.a<<" bulan : "<<duid.tb;
 
     return 0;
 }
