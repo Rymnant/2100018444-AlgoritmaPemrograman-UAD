@@ -1,6 +1,5 @@
 #include<fstream>
 #include<iostream>
-#include<conio.h>
 using namespace std;
 
 void shop(){
@@ -98,5 +97,5 @@ int main () {
    	cout<<"Done!";
    }
    
-   getch();
+   return 0;
 }
