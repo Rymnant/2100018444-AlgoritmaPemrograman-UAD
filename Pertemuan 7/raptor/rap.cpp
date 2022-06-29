@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
-int main()
-{
+int main(){
     int i, j, temp;
     int arr[9] = {9,2,1,4,11,10,18,6};
     
